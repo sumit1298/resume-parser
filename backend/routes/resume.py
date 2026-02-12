@@ -1,11 +1,11 @@
 from fastapi import APIRouter, UploadFile, File, Depends
-from utils.security import get_current_user
-from services.resume_parser import parse_resume
-from services.ats_scoring import calculate_ats_score
-from services.ai_feedback import generate_ai_feedback
+from backend.utils.security import get_current_user
+from backend.services.resume_parser import parse_resume
+from backend.services.ats_scoring import calculate_ats_score
+from backend.services.ai_feedback import generate_ai_feedback
 from sqlalchemy.orm import Session
-from database.db import get_db
-from models.report import ResumeReport
+from backend.database.db import get_db
+from backend.models.report import ResumeReport
 router = APIRouter()
 
 @router.post("/upload")
